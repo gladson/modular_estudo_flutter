@@ -1,36 +1,30 @@
+import 'package:dio/dio.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:teste_flutter_modular_mobx/app/app_widget.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/app_controller.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/app_widget.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/modules/home/home_module.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/shared/repository/poke_repository.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/shared/utils/constants.dart';
 
-import 'package:teste_flutter_modular_mobx/app/app_controller.dart';
-import 'package:teste_flutter_modular_mobx/app/pages/home/home_controller.dart';
-
-import 'package:teste_flutter_modular_mobx/app/pages/home/home_page.dart';
-import 'package:teste_flutter_modular_mobx/app/pages/other/other_page.dart';
-import 'package:teste_flutter_modular_mobx/app/pages/another/another_page.dart';
-
-class AppModule extends MainModule{
-  //Sistema de injeção de dependencias
+class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-    Bind((i) => AppController()),
-    Bind((i) => HomeController()),
-  ];
+        Bind((i) => AppController()),
+        Bind((i) => PokeRepository(i.get<Dio>())),
+        Bind((i) => Dio(BaseOptions(baseUrl: URL_BASE))),
+      ];
 
-  //Sistema de rotas
   @override
   List<Router> get routers => [
-    Router('/', child: (_, args) => HomePage()),
-    Router('/other/:text', child: (_, args) => OtherPage(
-      text: args.params['text'],
-      )
-    ),
-    Router('/another', child: (_, args) => AnotherPage()),
+    Router(Modular.initialRoute, module: HomeModule()),
   ];
 
   @override
   Widget get bootstrap => AppWidget();
 
+  static Inject get to => Inject<AppModule>.of();
 }

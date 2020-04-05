@@ -1,4 +1,4 @@
-package com.example.teste_flutter_modular_mobx
+package com.example.teste_flutter_slidy_modular_mobx
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

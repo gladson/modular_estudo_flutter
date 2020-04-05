@@ -1,11 +1,11 @@
-# teste_flutter_modular_mobx
+# teste_flutter_slidy_modular_mobx
 
-## Conhecendo o [Modular](https://github.com/Flutterando/modular) & [MobX](https://github.com/mobxjs/mobx.dart)
+## Conhecendo o [Slidy](https://github.com/Flutterando/slidy) & [Modular](https://github.com/Flutterando/modular) & [MobX](https://github.com/mobxjs/mobx.dart)
 
 ### Rodar Projeto
 
 ```shell
-$ cd teste_flutter_modular_mobx
+$ cd teste_flutter_slidy_modular_mobx
 $ flutter run
 ```
 
