@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 
-import 'package:teste_flutter_slidy_modular_mobx/app/shared/models/poke_model.dart';
-import 'package:teste_flutter_slidy_modular_mobx/app/shared/repository/poke_repository.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/modules/home/models/poke_model.dart';
+import 'package:teste_flutter_slidy_modular_mobx/app/modules/home/repository/poke_repository.dart';
 
 part 'home_controller.g.dart';
 
